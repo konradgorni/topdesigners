@@ -1,0 +1,1028 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Quicksand;
+}
+html {
+  scroll-behavior: smooth;
+}
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+  @include mq(xxlarge) {
+    width: 1600px;
+    margin: 0 auto;
+  }
+}
+.header {
+  height: 64px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  justify-content: space-between;
+  @include mq(large) {
+    padding: 0 0 0 150px;
+  }
+
+  &__logo {
+    width: 80px;
+    height: 36px;
+    line-height: 64px;
+    border: 1px solid red;
+    border-bottom-left-radius: 25%;
+    border-top-left-radius: 25%;
+    border-bottom-right-radius: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include mq(large) {
+      width: 150px;
+      height: 45px;
+      font-size: 20px;
+    }
+    &__short {
+      font-family: Quicksand;
+      font-size: 18px;
+      font-weight: lighter;
+      color: #777777;
+    }
+  }
+  &__socialMedia {
+    display: none;
+
+    margin-left: 60%;
+
+    &__icons {
+      padding: 10px;
+    }
+    @include mq(large) {
+      display: block;
+      display: flex;
+    }
+  }
+  &__nav {
+    position: absolute;
+    top: 64px;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    transition: 0.5s;
+    z-index: 100000;
+    &__list {
+      list-style-type: none;
+      &__item {
+        display: block;
+        line-height: 80px;
+        text-align: center;
+        &__link {
+          text-decoration: none;
+          color: white;
+          font-size: 25px;
+        }
+      }
+    }
+  }
+  &__fullMenu {
+    &__text {
+      display: none;
+      @include mq(large) {
+        display: block;
+      }
+    }
+    &__mobile-menu {
+      float: right;
+      @include mq(large) {
+        margin: 15px;
+      }
+      &__bars {
+        width: 35px;
+        height: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        z-index: 100;
+        // display: none;
+        &__bar {
+          height: 4px;
+          width: 100%;
+          background-color: black;
+          @include mq(large) {
+            background-color: white;
+          }
+        }
+      }
+      &__x {
+        font-size: 40px;
+        width: 35px;
+        height: 30px;
+        font-weight: bold;
+        display: none;
+        line-height: 30px;
+      }
+    }
+    @include mq(large) {
+      display: flex;
+      align-items: center;
+      width: 350px;
+      height: 100%;
+      background-color: black;
+      color: white;
+    }
+  }
+}
+.active {
+  left: 0;
+}
+.xactive {
+  display: block;
+}
+.hamburgerActive {
+  display: none;
+}
+.firstSection {
+  width: 100%;
+  height: 400px;
+  color: white;
+  font-family: Quicksand;
+  background: url('img/laptopphoto.png') center/cover;
+  @include mq(large) {
+    height: 600px;
+  }
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  &__text1 {
+    font-size: 24px;
+    height: 30px;
+    line-height: 30px;
+    @include mq(small) {
+      font-size: 30px;
+    }
+  }
+  &__text1::before {
+    content: '';
+    width: 100px;
+    border: 1px solid lightgray;
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 15px;
+    @include mq(xxsmall) {
+      width: 50px;
+    }
+  }
+  &__text1::after {
+    content: '';
+    width: 100px;
+    border: 1px solid lightgray;
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 15px;
+    @include mq(xxsmall) {
+      width: 50px;
+    }
+  }
+  &__text2 {
+    font-size: 56px;
+    font-weight: bold;
+    margin-bottom: 50px;
+  }
+  &__button {
+    width: 130px;
+    height: 32px;
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    @include mq(small) {
+      width: 160px;
+      height: 38px;
+      font-size: 18px;
+    }
+  }
+  &__arrows {
+    margin-top: 25px;
+    width: 12px;
+    height: 25px;
+  }
+}
+
+.statsSection {
+  height: 1110px;
+  width: 100%;
+  @include mq(large) {
+    height: 300px;
+    margin-bottom: 3%;
+  }
+  &__container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    @include mq(large) {
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    &__card {
+      position: relative;
+      width: 250px;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+      border-radius: 4px;
+      text-align: center;
+      overflow: hidden;
+
+      &__box {
+        width: 200px;
+        height: 200px;
+        &__percent {
+          position: relative;
+          width: 180px;
+          height: 180px;
+          border-radius: 50%;
+          z-index: 1000;
+
+          &__number {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+
+            &__count {
+              color: black;
+              font-weight: 700;
+              font-size: 40px;
+              transition: 0.5s;
+              display: flex;
+              flex-direction: column;
+
+              span {
+                font-size: 13px;
+                text-transform: uppercase;
+                font-weight: lighter;
+                letter-spacing: 1pxv;
+              }
+            }
+          }
+        }
+        &__description {
+          position: relative;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+  .object {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    z-index: 1000;
+  }
+  .object circle {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: lightgray;
+    stroke-width: 3;
+    stroke-linecap: round;
+    transform: translate(1.5px, 1.5px);
+  }
+  .object circle:nth-child(2) {
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+  }
+
+  .statsSection__container__card:nth-child(1) .object circle:nth-child(2) {
+    stroke-dashoffset: calc(440 - (440 * 50) / 100);
+    stroke: red;
+  }
+  .statsSection__container__card:nth-child(2) .object circle:nth-child(2) {
+    stroke-dashoffset: calc(440 - (440 * 35) / 100);
+    stroke: #00cc99;
+  }
+  .statsSection__container__card:nth-child(3) .object circle:nth-child(2) {
+    stroke-dashoffset: calc(440 - (440 * 80) / 100);
+    stroke: black;
+  }
+}
+
+.ourteam {
+  width: 100%;
+  &__header {
+    height: 200px;
+    width: 100%;
+    background: url('img/ourteam.png') center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Quicksand;
+    color: white;
+    @include mq(large) {
+      height: 300px;
+    }
+    &__border {
+      width: 85%;
+      height: 90%;
+      border: 3px solid white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      &__text1 {
+        font-size: 25px;
+        letter-spacing: 1px;
+        height: 30px;
+      }
+
+      &__text1::before {
+        content: '';
+        width: 82px;
+        border: 1px solid white;
+        vertical-align: middle;
+        display: inline-block;
+        margin-right: 15px;
+        @include mq(xxsmall) {
+          width: 45px;
+        }
+      }
+
+      &__text1::after {
+        content: '';
+        width: 82px;
+        border: 1px solid white;
+        vertical-align: middle;
+        display: inline-block;
+        margin-left: 15px;
+        @include mq(xxsmall) {
+          width: 45px;
+        }
+      }
+      &__text2 {
+        font-size: 48px;
+        letter-spacing: 1px;
+        font-weight: bold;
+        @include mq(xxsmall) {
+          font-size: 32px;
+        }
+      }
+    }
+  }
+  &__teamMembers {
+    width: 100%;
+    @include mq(large) {
+      margin-top: 80px;
+    }
+    &__adrianna {
+      margin: 50px 0 40px 0;
+      @include mq(large) {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        margin: 0px 0px 0px 0px;
+      }
+
+      &__header {
+        width: 85%;
+        height: 200px;
+        margin: 0 auto;
+        border-top: 3px solid black;
+        border-left: 3px solid black;
+        border-right: 3px solid black;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        @include mq(large) {
+          height: 260px;
+          width: 40%;
+          margin: 20px 0 20px 0px;
+          border-right: 3px solid black;
+          border-left: none;
+          border-bottom: 3px solid black;
+        }
+        &__name {
+          text-transform: uppercase;
+          font-weight: lighter;
+          font-size: 38px;
+        }
+        &__job {
+          font-size: 20px;
+        }
+        &__line {
+          width: 180px;
+          height: 3px;
+          background-color: red;
+          margin: 17px 0 30px 0;
+        }
+        &__text {
+          margin-bottom: 20px;
+        }
+      }
+      &__bottom {
+        background: url('img/adrianna.png') center/cover;
+        height: 240px;
+        width: 100%;
+        position: relative;
+        @include mq(large) {
+          height: 300px;
+          width: 40%;
+          background: url('img/adrianna.png') cover;
+        }
+        &__figure {
+          width: 0;
+          height: 0;
+          border-left: 20px solid transparent;
+          border-right: 20px solid transparent;
+          border-top: 30px solid white;
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%);
+          @include mq(large) {
+            left: 100%;
+            top: 50%;
+            transform: translate(-85%, -50%) rotate(90deg);
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-top: 40px solid white;
+          }
+        }
+        &__border {
+          width: 85%;
+          height: 220px;
+          margin: 0 auto;
+          border-bottom: 3px solid white;
+          border-left: 3px solid white;
+          border-right: 3px solid white;
+          @include mq(large) {
+            // background-color: red;
+            height: 260px;
+            width: calc(100% - 20px);
+            margin: 20px 0 20px 20px;
+            border-left: 3px solid white;
+            border-top: 3px solid white;
+            border-bottom: 3px solid white;
+            border-right: none;
+          }
+        }
+      }
+    }
+    &__olivia {
+      margin: 50px 0 40px 0;
+      @include mq(large) {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 0;
+      }
+
+      &__header {
+        width: 85%;
+        height: 235px;
+        margin: 0 auto;
+        height: 200px;
+        border-top: 3px solid black;
+        border-left: 3px solid black;
+        border-right: 3px solid black;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        @include mq(large) {
+          height: 260px;
+          width: 40%;
+          margin: 20px 0px 20px 2.5%;
+          border: none;
+        }
+        .teamMemberBorder {
+          width: 100%;
+          height: 100%;
+          display: none;
+          position: absolute;
+          margin-left: 2.5%;
+          border-left: 3px solid black;
+          border-top: 3px solid black;
+          border-bottom: 3px solid black;
+          @include mq(large) {
+            display: block;
+          }
+        }
+        &__name {
+          text-transform: uppercase;
+          font-weight: lighter;
+          font-size: 38px;
+        }
+        &__job {
+          font-size: 20px;
+        }
+        &__line {
+          width: 180px;
+          height: 3px;
+          background-color: red;
+          margin: 17px 0 30px 0;
+        }
+        &__text {
+          margin-bottom: 20px;
+        }
+      }
+      &__bottom {
+        background: url('img/olivia.png') center/cover;
+        height: 240px;
+        width: 100%;
+        position: relative;
+        @include mq(large) {
+          height: 300px;
+          width: 42.5%;
+          overflow: hidden;
+          background: url('img/olivia.png') cover;
+        }
+        &__figure {
+          width: 0;
+          height: 0;
+          border-left: 20px solid transparent;
+          border-right: 20px solid transparent;
+          border-top: 30px solid white;
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%);
+          @include mq(large) {
+            left: calc(0% + 35px);
+            top: 50%;
+            transform: translate(-85%, -50%) rotate(-90deg);
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-top: 40px solid white;
+          }
+        }
+        &__border {
+          width: 85%;
+          height: 220px;
+          margin: 0 auto;
+          border-bottom: 3px solid white;
+          border-left: 3px solid white;
+          border-right: 3px solid white;
+          @include mq(large) {
+            height: 260px;
+            width: calc(100% - 20px);
+            margin: 20px 0 20px 0px;
+            border-left: none;
+            border-top: 3px solid white;
+            border-bottom: 3px solid white;
+            border-right: 3px solid white;
+          }
+        }
+      }
+    }
+    &__thomas {
+      margin: 50px 0 40px 0;
+      @include mq(large) {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        margin: 0px 0px 0px 0px;
+      }
+
+      &__header {
+        width: 85%;
+        height: 235px;
+        margin: 0 auto;
+        height: 200px;
+        border-top: 3px solid black;
+        border-left: 3px solid black;
+        border-right: 3px solid black;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        @include mq(large) {
+          height: 260px;
+          width: 40%;
+          margin: 20px 0 20px 0px;
+          border-right: 3px solid black;
+          border-left: none;
+          border-bottom: 3px solid black;
+        }
+        &__name {
+          text-transform: uppercase;
+          font-weight: lighter;
+          font-size: 38px;
+        }
+        &__job {
+          font-size: 20px;
+        }
+        &__line {
+          width: 180px;
+          height: 3px;
+          background-color: red;
+          margin: 17px 0 30px 0;
+        }
+        &__text {
+          margin-bottom: 20px;
+        }
+      }
+      &__bottom {
+        background: url('img/thomas.png') center/cover;
+        height: 240px;
+        width: 100%;
+        position: relative;
+        @include mq(large) {
+          height: 300px;
+          width: 40%;
+          background: url('img/adrianna.png') cover;
+        }
+        &__figure {
+          width: 0;
+          height: 0;
+          border-left: 20px solid transparent;
+          border-right: 20px solid transparent;
+          border-top: 30px solid white;
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%);
+          @include mq(large) {
+            @include mq(large) {
+              left: 100%;
+              top: 50%;
+              transform: translate(-85%, -50%) rotate(90deg);
+              border-left: 25px solid transparent;
+              border-right: 25px solid transparent;
+              border-top: 40px solid white;
+            }
+          }
+        }
+        &__border {
+          width: 85%;
+          height: 220px;
+          margin: 0 auto;
+          border-bottom: 3px solid white;
+          border-left: 3px solid white;
+          border-right: 3px solid white;
+          @include mq(large) {
+            // background-color: red;
+            height: 260px;
+            width: calc(100% - 20px);
+            margin: 20px 0 20px 20px;
+            border-left: 3px solid white;
+            border-top: 3px solid white;
+            border-bottom: 3px solid white;
+            border-right: none;
+          }
+        }
+      }
+    }
+    &__taylor {
+      margin: 50px 0 40px 0;
+      @include mq(large) {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 0;
+      }
+      &__header {
+        width: 85%;
+        height: 235px;
+        margin: 0 auto;
+        height: 200px;
+        border-top: 3px solid black;
+        border-left: 3px solid black;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        @include mq(large) {
+          height: 260px;
+          width: 40%;
+          margin: 20px 0px 20px 2.5%;
+          border: none;
+        }
+        .teamMemberBorder2 {
+          width: 100%;
+          height: 100%;
+          display: none;
+          position: absolute;
+          margin-left: 2.5%;
+          border-left: 3px solid black;
+          border-top: 3px solid black;
+          border-bottom: 3px solid black;
+          @include mq(large) {
+            display: block;
+          }
+        }
+
+        &__name {
+          text-transform: uppercase;
+          font-weight: lighter;
+          font-size: 38px;
+        }
+        &__job {
+          font-size: 20px;
+        }
+        &__line {
+          width: 180px;
+          height: 3px;
+          background-color: red;
+          margin: 17px 0 30px 0;
+        }
+        &__text {
+          margin-bottom: 20px;
+        }
+      }
+      &__bottom {
+        background: url('img/taylor.png') center/cover;
+        height: 240px;
+        width: 100%;
+        position: relative;
+        @include mq(large) {
+          height: 300px;
+          width: 42.5%;
+          overflow: hidden;
+          background: url('img/olivia.png') cover;
+        }
+        &__figure {
+          width: 0;
+          height: 0;
+          border-left: 20px solid transparent;
+          border-right: 20px solid transparent;
+          border-top: 30px solid white;
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%);
+          @include mq(large) {
+            left: calc(0% + 35px);
+            top: 50%;
+            transform: translate(-85%, -50%) rotate(-90deg);
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-top: 40px solid white;
+          }
+        }
+        &__border {
+          width: 85%;
+          height: 220px;
+          margin: 0 auto;
+          border-bottom: 3px solid white;
+          border-left: 3px solid white;
+          border-right: 3px solid white;
+          @include mq(large) {
+            height: 260px;
+            width: calc(100% - 20px);
+            margin: 20px 0 20px 0px;
+            border-left: none;
+            border-top: 3px solid white;
+            border-bottom: 3px solid white;
+            border-right: 3px solid white;
+          }
+        }
+      }
+    }
+  }
+}
+.portfolio {
+  &__header {
+    height: 200px;
+    width: 100%;
+    background: url('img/portfolio.png') center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Quicksand;
+    color: white;
+    @include mq(large) {
+      height: 300px;
+      background: url('img/portfoliohd.png');
+      margin-top: 20px;
+    }
+    &__border {
+      width: 85%;
+      height: 90%;
+      border: 3px solid white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      &__text1 {
+        font-size: 20px;
+        letter-spacing: 1px;
+        height: 30px;
+      }
+
+      &__text1::before {
+        content: '';
+        width: 46px;
+        border: 1px solid white;
+        vertical-align: middle;
+        display: inline-block;
+        margin-right: 15px;
+        @include mq(xxsmall) {
+          width: 25px;
+          margin-right: 5px;
+        }
+      }
+
+      &__text1::after {
+        content: '';
+        width: 46px;
+        border: 1px solid white;
+        vertical-align: middle;
+        display: inline-block;
+        margin-left: 15px;
+        @include mq(xxsmall) {
+          width: 25px;
+          margin-left: 5px;
+        }
+      }
+      &__text2 {
+        font-size: 48px;
+        letter-spacing: 1px;
+        font-weight: bold;
+        @include mq(xxsmall) {
+          font-size: 32px;
+        }
+      }
+    }
+  }
+  &__projects {
+    // height: 480px;
+    width: 100%;
+    display: flex;
+    flex-direction: wrap;
+    flex-wrap: wrap;
+    &__pictures {
+      width: 33.333%;
+      @include mq(large) {
+        width: 16.666666%;
+      }
+    }
+  }
+  &__projectsLarge {
+    display: none;
+    width: 100%;
+    display: flex;
+    flex-direction: wrap;
+    flex-wrap: wrap;
+    &__pictures {
+      width: 16.666666%;
+      @include mq(large) {
+        display: block;
+      }
+    }
+  }
+}
+.workfor {
+  &__header {
+    height: 200px;
+    width: 100%;
+    background: url('img/workfor.png') center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Quicksand;
+    color: white;
+    &__border {
+      width: 85%;
+      height: 90%;
+      border: 3px solid white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      &__text1 {
+        font-size: 18px;
+        letter-spacing: 1px;
+        height: 30px;
+      }
+
+      &__text1::before {
+        content: '';
+        width: 46px;
+        border: 1px solid white;
+        vertical-align: middle;
+        display: inline-block;
+        margin-right: 15px;
+      }
+
+      &__text1::after {
+        content: '';
+        width: 46px;
+        border: 1px solid white;
+        vertical-align: middle;
+        display: inline-block;
+        margin-left: 15px;
+      }
+      &__text2 {
+        font-size: 48px;
+        letter-spacing: 1px;
+        font-weight: bold;
+      }
+    }
+  }
+  &__emptyContainers {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    opacity: 50%;
+    &__container {
+      border: 1px solid lightgray;
+      width: 33.333%;
+    }
+  }
+  &__brands {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    opacity: 50%;
+    &__container {
+      height: 160px;
+      width: 33.3333%;
+      border: 1px solid lightgray;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+.footer {
+  color: white;
+  height: 650px;
+  width: 100%;
+  background-color: #131210;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  font-family: Quicksand;
+  font-weight: lighter;
+  @include mq(large) {
+    height: 300px;
+    flex-direction: row;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &__title {
+      font-size: 30px;
+      letter-spacing: 1px;
+      @include mq(small) {
+        font-size: 35px;
+      }
+    }
+    &__line {
+      width: 140px;
+      height: 1px;
+      background-color: #0f2f25;
+      margin: 20px 0 31px 0;
+      @include mq(small) {
+        width: 180px;
+      }
+    }
+    &__text {
+      color: #4b4941;
+      margin-bottom: 50px;
+      @include mq(small) {
+        font-size: 20px;
+      }
+    }
+  }
+}
+.footerUse {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #11110e;
+  &__text {
+    color: #4b4941;
+    font-size: 17px;
+  }
+}
