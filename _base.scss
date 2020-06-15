@@ -63,7 +63,7 @@ html {
     }
   }
   &__nav {
-    position: absolute;
+    position: fixed;
     top: 64px;
     left: -100%;
     width: 100%;
@@ -86,6 +86,10 @@ html {
     }
   }
   &__fullMenu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
     &__text {
       display: none;
       @include mq(large) {
@@ -148,6 +152,7 @@ html {
   color: white;
   font-family: Quicksand;
   background: url('img/laptopphoto.png') center/cover;
+  // background-image: url('img/svgtest.svg');
   @include mq(large) {
     height: 600px;
   }
@@ -806,7 +811,8 @@ html {
   &__header {
     height: 200px;
     width: 100%;
-    background: url('img/portfolio.png') center/cover;
+    background-image: url('img/portfolio.png') center/cover;
+    background-size: contain;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -814,7 +820,7 @@ html {
     color: white;
     @include mq(large) {
       height: 300px;
-      background: url('img/portfoliohd.png');
+      background: url('img/portfolio.png') center/cover;
       margin-top: 20px;
     }
     &__border {
