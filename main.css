@@ -120,6 +120,13 @@ html {
   padding-bottom: 50%;
 }
 
+@media (min-width: 1024px) {
+  .header__nav {
+    padding-bottom: 0;
+    position: absolute;
+  }
+}
+
 .header__nav__list {
   list-style-type: none;
   margin-bottom: 0%;
@@ -135,6 +142,12 @@ html {
   text-decoration: none;
   color: white;
   font-size: 30px;
+}
+
+@media (min-width: 1024px) {
+  .header__nav__list__item__link {
+    font-size: 45px;
+  }
 }
 
 .header__fullMenu {
@@ -186,6 +199,7 @@ html {
       -ms-flex-pack: justify;
           justify-content: space-between;
   z-index: 1;
+  cursor: pointer;
 }
 
 .header__fullMenu__mobile-menu__bars__bar {
@@ -209,6 +223,7 @@ html {
   line-height: 30px;
   z-index: 2;
   color: red;
+  cursor: pointer;
 }
 
 @media (min-width: 1024px) {
@@ -315,13 +330,14 @@ html {
 }
 
 .firstSection__button {
-  width: 130px;
-  height: 32px;
+  width: 150px;
+  height: 42px;
   border: 2px solid white;
   background-color: transparent;
   color: white;
   border-radius: 25px;
-  cursor: pointer;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
 }
 
 @media (min-width: 640px) {
@@ -330,6 +346,25 @@ html {
     height: 38px;
     font-size: 18px;
   }
+}
+
+.firstSection__button__link {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.firstSection__button__link:hover {
+  color: goldenrod;
+  font-size: 22px;
+}
+
+.firstSection__button:hover {
+  border: none;
 }
 
 .firstSection__arrows {
@@ -1426,7 +1461,7 @@ html {
 
 .footer {
   color: white;
-  height: 650px;
+  height: 600px;
   width: 100%;
   background-color: #131210;
   display: -webkit-box;
@@ -1457,6 +1492,7 @@ html {
 }
 
 .footer__info {
+  height: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1487,7 +1523,7 @@ html {
   width: 140px;
   height: 1px;
   background-color: #0f2f25;
-  margin: 20px 0 31px 0;
+  margin: 20px 0 20px 0;
 }
 
 @media (min-width: 640px) {
