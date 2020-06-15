@@ -7,6 +7,7 @@ function toggleMenu() {
   nav.classList.toggle('active');
   console.log(innerHeight);
   x.classList.toggle('xactive');
+  x.style.color = 'white';
   bars.classList.toggle('hamburgerActive');
 }
 hamburger.addEventListener('click', toggleMenu, false);
